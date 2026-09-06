@@ -1,0 +1,21 @@
+name: tarp
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy=1.23.5
+  - pyyaml=6.0.3
+  - pillow
+  - tqdm=4.67.1
+  - scikit-learn
+  - scipy
+  - ftfy
+  - regex
+  # Install PyTorch with CUDA 11.8 (adjust cu118 -> your CUDA, or use cpuonly).
+  - pip:
+      - torch==2.7.0 --index-url https://download.pytorch.org/whl/cu118
+      - torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cu118

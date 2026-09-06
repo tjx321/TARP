@@ -1,0 +1,24 @@
+# ---- Precomputed caches: keep only an empty placeholder, ignore contents ----
+# The cache files (*.pt) are large and distributed separately (see README / download script).
+caches/*
+!caches/.gitkeep
+
+# ---- Experiment outputs ----
+results/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ---- CLIP model weights (downloaded at runtime to ~/.cache/clip) ----
+*.pt
+
+# ---- OS / editor ----
+.DS_Store
+.vscode/
+.idea/
+
+# ---- Local env ----
+*.log

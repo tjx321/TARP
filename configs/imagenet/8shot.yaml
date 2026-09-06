@@ -1,0 +1,22 @@
+# TARP config — dataset: imagenet, shots: 8
+# CLIP backbone is chosen at run time via `python main.py --backbone {RN50,RN101,ViT-B/16,ViT-B/32}`;
+# the `clip_backbone` value here is only a placeholder default.
+
+# Path to the dataset root. Resolve ${VAR} via environment variables:
+#   export DATASET_ROOT=/path/to/FewShotCls        (10 standard few-shot datasets)
+#   export DATASET_IMAGENET=/path/to/ImageNet-1K   (ImageNet only)
+root_path: ${DATASET_IMAGENET}
+
+# Reuse the precomputed caches (see scripts/download_caches.sh).
+# Set to false to recompute and overwrite the cache under caches/<backbone>/seed<S>/.
+load_cache: true
+load_pre_feat: true
+
+# Basic task config.
+dataset: imagenet
+shots: 8
+clip_backbone: RN50
+
+# Number of augmentation rounds when building the image cache (only used when
+# load_cache: false). Fixed to 10 across all datasets and shots.
+augment_epoch: 10
